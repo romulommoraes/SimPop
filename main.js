@@ -12,8 +12,8 @@ function startscene() {
         fill(252, 252, 252);
         rect(0, 0, 600, 600);
         fill(0, 0, 0);
-        text("Simulador Populacional", 158, 285);
-        text("Rômulo Maciel de Moraes Filho", 116, 310);
+        text("Simulador Populacional", 190, 285);
+
     }
 }
 let signalEnding = 1;

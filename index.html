@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Populacional :)</title>
+    <meta name="Simulador Populacional para ensino de genética mendeliana" content="">
+    <meta name="Rômulo Maciel de Moraes Filho" content="">
+    <script src="p5.min.js"></script>
+    <!-- Mobile Specific Metas -->
+
+    <!--External Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Internal Styles -->
+    <link rel="stylesheet" href="css.css">
+    <!-- External Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+    <!-- Internal Scripts -->
+    <script type="text/javascript" src="">
+    </script>
+
+    
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Home</a> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+           <!-- <li class="nav-item active">
+                 <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.researchgate.net/profile/Romulo_Moraes_Filho">Research Gate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/r%C3%B4mulo-moraes-666617132">Linkedin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://lattes.cnpq.br/3450847631355213">Currículo Lattes</a>
+            </li>
+            <!-- Dropdown - Delete from this comment to the next if you don't want it -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produções</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="https://romulomoraesads.000webhostapp.com/naturalsimulations/Simulador_Populacional.html">Simulações Naturais</a>
+                    <a class="dropdown-item" href="#">Artigos Científicos</a>
+                    <a class="dropdown-item" href="http://dgp.cnpq.br/dgp/espelhorh/3450847631355213">Grupos de Pesquisa</a>
+                    <a class="dropdown-item" href="https://orcid.org/0000-0003-3988-4379">ORCID</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="https://github.com/romulommoraes">Github</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    </nav>
+    <main role="main" class="containerRomulo">
+        <h2 id="title" style="text-align: center;"> Simulador Populacional </h2><br>
+    <div class="row" id="divmae"> 
+      <div class="one_column_block">
+        <form>
+            <input class="form-control" id="numIndividuos1" placeholder="População inicial" type="text">     
+            <input class="form-control" id="MaxPop" placeholder="Limite populacional (500)" type="text">
+            <input class="form-control" id="freqP" placeholder="Frequência de p (0 a 1)" type="text">
+            <input class="form-control" id="selxAA" placeholder="Seleção contra AA(%)" type="text">
+            <input class="form-control" id="selxAa" placeholder="Seleção contra Aa(%)" type="text">
+            <input class="form-control" id="selxaa" placeholder="Seleção contra aa(%)" type="text">
+            </form>
+            <form>
+                <select class="custom-select mr-sm-2 forms" id="selRep" data-toggle="tooltip" data-placement="top" title="Determina se indivíduos tem preferência por tipos específicos">
+                  
+                <option selected>Seleção Reprodutiva.</option>
+                  <option value="0">Sem Seleção</option>
+                  <option value="1">Mesmo Fenótipo</option>
+                  <option value="2">Fenótipo Distinto</option>
+                  <option value="3">Mesmo Genótipo</option>
+                  <option value="4">Genótipo Distinto</option>
+   
+                </select>
+              </form>
+               
+            <p></p>
+            <button id="Alterar" type="button" class="btn btn-primary btn-block" >Entrar variáveis</button>
+            <button id="abort" type="button" class="btn btn-success btn-block" >Finalizar Simulação</button>
+            <button id="pause" type="button" class="btn btn-warning btn-block" >Pausar Simulação</button>
+
+        </form>
+        <!--  botão modal  -->
+        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModal">
+            Documentação
+          </button>
+          <div class="modal-dialog modal-dialog-scrollable">
+    
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Documentação Simulador Evolutivo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    ......                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                 
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    
+      <div class="six_columns_block">
+        <canva id="canva"></canva>
+      </div>
+      
+      <div class="five_columns_block" >
+        
+        <canvas id="grafico"> </canvas> 
+        <canvas id="graficow"></canvas>   
+       
+    </div>
+   
+        <script src="main.js"> </script>
+        <script src="simulacao.js"> </script>
+        <script src="Grafico.js"> </script>
+       <script src="individuo.js"> </script>
+    </div>
+    <div class="row">
+      <div id="msg" class="twelve columns"><p>"Aplicação desenvolvida em JavaScript com uso da bibliteca P5.js baseada em modelos de genética populacional para fins educativos. Rômulo Maciel de Moraes Filho. Biólogo, Doutor em Genética, Pós Doutorando em Agronomia, Graduando em Análise e Desenvolvimento de Sistemas."</p> </div>
+    </div>
+
+    </main><!-- /.container -->
+
+
+    <footer class="footer fixed-bottom">
+        <div class="name-bottom">
+            <h8 class="section-heading"> Contato: romulommfilho@yahoo.com.br</h8>
+            <div class="mx-auto heading-line"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+

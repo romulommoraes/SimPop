@@ -1,0 +1,120 @@
+@media (max-width: 62em) {
+  .navbar-nav {
+    padding-top: 0.425rem;
+    padding-left: 0.75rem;
+  }
+
+  .navbar-nav .nav-item {
+    float: none;
+  }
+
+  .navbar-brand {
+    float: right;
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-item {
+    display: block;
+  }
+
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    float: none;
+  }
+}
+
+.footer {
+  background-color: rgb(0, 0, 0);
+  color: #fafaff;
+  text-align: left;
+}
+
+#entrada {
+    width: 240px;
+    margin-top: 90pt;
+    margin-left: 0px;
+}
+
+
+
+
+#profile_picture {
+  border: 2px solid rgb(0, 0, 0);
+  width: 95%;
+  margin-top: 90px;
+  margin-left: 0px;
+}
+#textz {
+  margin-top: 56px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+.myself {
+  margin-top: 25px;
+  font-size: 13px;
+  text-align: justify;
+}
+
+#msg {
+  margin-top: 25px;
+  font-size: 9px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+
+
+.containerRomulo {
+  width: 96%;
+  margin-left: 2%;
+}
+.one_column_block {
+  border: 1px solid gray; 
+  width: 180px;
+  margin-left: 1%;
+
+}
+.six_columns_block {
+  border: 1px solid gray; 
+  width: 602px;
+  margin-left: 1%;
+
+}
+.five_columns_block {
+  border: 1px solid gray; 
+  width: 500px;
+  margin-left: 1%;
+
+}
+
+.btn-block {
+  margin: 3%;
+  width: 90%;
+  font-size: 10.5pt;
+  height: 32px;
+}
+
+.forms {
+  margin: 3%;
+  text-align: left;
+  width: 90%;
+  font-size: 7.5pt;
+  background-color: white;
+  padding: 4%;
+  height: 32px;
+}
+.form-control {
+  margin: 3%;
+  text-align: center;
+  width: 90%;
+  font-size: 7.5pt;
+  background-color: white;
+  padding: 4%;
+  height: 32px;               
+
+}
+
